@@ -38,11 +38,13 @@ function SaveLocally(BookArray) {
   const BookList = JSON.stringify(BookArray);
   localStorage.setItem('library', BookList);
 }
+/* eslint-disable */ 
 // retrieve old data 
 function RetrieveOld() {
   Books = JSON.parse(localStorage.getItem('library')) || [];
   SaveLocally(Books);
 }
+/* eslint-enable */
 // display books
 function ShowBook() {
   RetrieveOld();
