@@ -1,19 +1,27 @@
 let Books = [];
-Books = BooksNew;
-localStorage.clear();
-const BookList = JSON.stringify(BooksNew);
-// eslint-disable-next-line no-unused-vars
-localStorage.setItem('library', BookList);
+// Remove Book for display and local storage
+function NewbookRemove(RButton) {
+  const BookContainer = document.getElementById(RButton.id);
+  BookContainer.parentNode.removeChild(BookContainer);
+  /* eslint-disable */ 
+  const BooksNew = Books.filter(function (item) {
+    return item.id != RButton.id;
+  });
+  /* eslint-enable */
+  Books = BooksNew;
+  localStorage.clear();
+  const BookList = JSON.stringify(BooksNew);
+  // eslint-disable-next-line no-unused-vars
+  localStorage.setItem('library', BookList);
 }
 // eslint-disable-next-line no-unused-vars
-//clear function to clear local storage on click event
+// clear local storage
 function Clear() {
   localStorage.clear();
   Books = [];
   document.getElementById('list_container').innerHTML = '';
 }
-
-// Create Id in the HTML file for each Book Added
+// create id for books on html
 function CreateHtml(IdBook) {
   const newdiv = document.createElement('div');
   newdiv.setAttribute('id', IdBook);
@@ -25,17 +33,17 @@ function CreateHtml(IdBook) {
   RemoveButt.setAttribute('id', IdBook);
   return [newdiv, title, author, RemoveButt];
 }
-// Save Book locally
+// save data locally
 function SaveLocally(BookArray) {
   const BookList = JSON.stringify(BookArray);
   localStorage.setItem('library', BookList);
 }
-// Retrieve pushed old books from localstorage on refresh
+// retrieve old data 
 function RetrieveOld() {
   Books = JSON.parse(localStorage.getItem('library')) || [];
   SaveLocally(Books);
 }
-// display data
+// display books
 function ShowBook() {
   RetrieveOld();
   const BooksCurrent = JSON.parse(localStorage.getItem('library'));
@@ -49,7 +57,7 @@ function ShowBook() {
     document.getElementById('list_container').appendChild(x[0]).appendChild(x[3]);
   });
   /* eslint-enable */
-}
+}// create New Book
 // eslint-disable-next-line no-unused-vars
 function Newbook() {
   const Title = document.getElementById('Title');
@@ -64,11 +72,5 @@ function Newbook() {
   document.getElementById('list_container').appendChild(x[0]).appendChild(x[2]);
   document.getElementById('list_container').appendChild(x[0]).appendChild(x[3]);
 }
-function NewbookRemove(RButton) {
-    const BookContainer = document.getElementById(RButton.id);
-    BookContainer.parentNode.removeChild(BookContainer);
-    /* eslint-disable */ 
-    const BooksNew = Books.filter(function (item) {
-      return item.id != RButton.id;
-    });
+
 ShowBook();
