@@ -32,7 +32,7 @@
 
 👤 **Chai**
 
-- GitHub: [@Abdona](https://github.com/chaw-bot)
+- GitHub: [@CHAW](https://github.com/chaw-bot)
 
 
 ## 🤝 Contributing
