@@ -3,7 +3,7 @@
 > This project is a presentation of working with Javascript functional programming 
 
 # Web Preview
-![Web preview]()
+
 
 ## Built With
 
