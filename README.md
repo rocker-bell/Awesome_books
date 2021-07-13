@@ -1,9 +1,9 @@
 # Awesome_Books
 
-> This project is a presentation of working with Javascript objects 
+> This project is a presentation of working with Javascript functional programming 
 
 # Web Preview
-![Web preview](BookAwesome.jpeg)
+![Web preview]()
 
 ## Built With
 
