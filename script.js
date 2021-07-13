@@ -14,8 +14,8 @@ function NewbookRemove(RButton) {
   // eslint-disable-next-line no-unused-vars
   localStorage.setItem('library', BookList);
 }
-// eslint-disable-next-line no-unused-vars
 // clear local storage
+// eslint-disable-next-line no-unused-vars
 function Clear() {
   localStorage.clear();
   Books = [];
