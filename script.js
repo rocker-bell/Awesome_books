@@ -1,53 +1,74 @@
-const library = document.querySelector('#library');
+let Books = [];
+Books = BooksNew;
+localStorage.clear();
+const BookList = JSON.stringify(BooksNew);
+// eslint-disable-next-line no-unused-vars
+localStorage.setItem('library', BookList);
+}
+// eslint-disable-next-line no-unused-vars
+//clear function to clear local storage on click event
+function Clear() {
+  localStorage.clear();
+  Books = [];
+  document.getElementById('list_container').innerHTML = '';
+}
 
-//add books
-const addBooks = document.forms['addBook'];
-
-let bookLib = [];
-
-addBooks.addEventListener('submit', function(e){
-  e.preventDefault();
-  const book = addBooks.querySelector('input[id="bookTitle"]').value;
-  const author = addBooks.querySelector('input[id="authorName"]').value;
-  
-  bookLib.push({
-   bookName: book,
-   bookAuthor: author,
+// Create Id in the HTML file for each Book Added
+function CreateHtml(IdBook) {
+  const newdiv = document.createElement('div');
+  newdiv.setAttribute('id', IdBook);
+  const title = document.createElement('p');
+  const author = document.createElement('p');
+  const RemoveButt = document.createElement('button');
+  RemoveButt.addEventListener('click', () => { NewbookRemove(RemoveButt); });
+  RemoveButt.textContent = 'remove';
+  RemoveButt.setAttribute('id', IdBook);
+  return [newdiv, title, author, RemoveButt];
+}
+// Save Book locally
+function SaveLocally(BookArray) {
+  const BookList = JSON.stringify(BookArray);
+  localStorage.setItem('library', BookList);
+}
+// Retrieve pushed old books from localstorage on refresh
+function RetrieveOld() {
+  Books = JSON.parse(localStorage.getItem('library')) || [];
+  SaveLocally(Books);
+}
+// display data
+function ShowBook() {
+  RetrieveOld();
+  const BooksCurrent = JSON.parse(localStorage.getItem('library'));
+  /* eslint-disable */
+  BooksCurrent.forEach(element => {
+    const x = CreateHtml(element.id);
+    x[1].innerHTML = `Title:   ${element.title}`
+    x[2].innerHTML = `Author:   ${element.author}`;
+    document.getElementById('list_container').appendChild(x[0]).appendChild(x[1]);
+    document.getElementById('list_container').appendChild(x[0]).appendChild(x[2]);
+    document.getElementById('list_container').appendChild(x[0]).appendChild(x[3]);
   });
-  
-  localStorage.setItem("books", JSON.stringify(bookLib));
- 
-  //create elements
-  const list = document.createElement('li');
-  const bookName = document.createElement('span');
-  const authorName = document.createElement('span');
-  const deleteButton = document.createElement('button');
-
-  // add text
-  bookName.textContent = book;
-  authorName.textContent = author;
-  deleteButton.textContent = 'Remove';
-
-  //remove books
-
-  library.addEventListener('click', function(e){
-    if(e.target.className === 'delete') {
-      const book = e.target.parentElement;
-      library.removeChild(book);
-    };
-  });
-
-  //add class
-  bookName.classList.add('bookTitle');
-  authorName.classList.add('authorName');
-  deleteButton.classList.add('delete');
-
-  //add to elements
-  list.appendChild(bookName);
-  list.appendChild(authorName);
-  list.appendChild(deleteButton);
-  library.appendChild(list);
-  library.style.listStyleType = 'none';
-});
-
-
+  /* eslint-enable */
+}
+// eslint-disable-next-line no-unused-vars
+function Newbook() {
+  const Title = document.getElementById('Title');
+  const Author = document.getElementById('Author');
+  const IdBook = Math.floor(Math.random() * 1000);
+  Books.push({ title: Title.value, author: Author.value, id: IdBook });
+  SaveLocally(Books);
+  const x = CreateHtml(IdBook);
+  x[1].innerHTML = `Title:      ${Title.value}`;
+  x[2].innerHTML = `Author:      ${Author.value}`;
+  document.getElementById('list_container').appendChild(x[0]).appendChild(x[1]);
+  document.getElementById('list_container').appendChild(x[0]).appendChild(x[2]);
+  document.getElementById('list_container').appendChild(x[0]).appendChild(x[3]);
+}
+function NewbookRemove(RButton) {
+    const BookContainer = document.getElementById(RButton.id);
+    BookContainer.parentNode.removeChild(BookContainer);
+    /* eslint-disable */ 
+    const BooksNew = Books.filter(function (item) {
+      return item.id != RButton.id;
+    });
+ShowBook();
