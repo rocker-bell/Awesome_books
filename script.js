@@ -1,26 +1,28 @@
 let Books = [];
+
 // Remove Book for display and local storage
 function NewbookRemove(RButton) {
   const BookContainer = document.getElementById(RButton.id);
   BookContainer.parentNode.removeChild(BookContainer);
-  /* eslint-disable */ 
+
   const BooksNew = Books.filter(function (item) {
     return item.id != RButton.id;
   });
-  /* eslint-enable */
+
   Books = BooksNew;
   localStorage.clear();
   const BookList = JSON.stringify(BooksNew);
-  // eslint-disable-next-line no-unused-vars
+
   localStorage.setItem('library', BookList);
 }
+
 // clear local storage
-// eslint-disable-next-line no-unused-vars
 function Clear() {
   localStorage.clear();
   Books = [];
   document.getElementById('list_container').innerHTML = '';
 }
+
 // create id for books on html
 function CreateHtml(IdBook) {
   const newdiv = document.createElement('div');
@@ -33,23 +35,24 @@ function CreateHtml(IdBook) {
   RemoveButt.setAttribute('id', IdBook);
   return [newdiv, title, author, RemoveButt];
 }
+
 // save data locally
 function SaveLocally(BookArray) {
   const BookList = JSON.stringify(BookArray);
   localStorage.setItem('library', BookList);
 }
-/* eslint-disable */ 
+
 // retrieve old data 
 function RetrieveOld() {
   Books = JSON.parse(localStorage.getItem('library')) || [];
   SaveLocally(Books);
 }
-/* eslint-enable */
+
 // display books
 function ShowBook() {
   RetrieveOld();
   const BooksCurrent = JSON.parse(localStorage.getItem('library'));
-  /* eslint-disable */
+
   BooksCurrent.forEach(element => {
     const x = CreateHtml(element.id);
     x[1].innerHTML = `Title:   ${element.title}`
@@ -58,8 +61,9 @@ function ShowBook() {
     document.getElementById('list_container').appendChild(x[0]).appendChild(x[2]);
     document.getElementById('list_container').appendChild(x[0]).appendChild(x[3]);
   });
-  /* eslint-enable */
-}// create New Book
+}
+
+// create New Book
 // eslint-disable-next-line no-unused-vars
 function Newbook() {
   const Title = document.getElementById('Title');
