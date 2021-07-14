@@ -7,13 +7,13 @@ class Book {
   }
 }
 
-//Class with list of books
+// Class with list of books
 class BookList {
   constructor(Books) {
     this.bookListCollection = Books;
   }
 
-  //Add book list to the top of the page
+  // Add book list to the top of the page
   addBook(Book) {
     this.bookListCollection.push(Book);
     const TitleP = document.createElement('p');
@@ -31,8 +31,8 @@ class BookList {
     document.getElementById('list_container').appendChild(BookContainer).appendChild(AuthorP);
     document.getElementById('list_container').appendChild(BookContainer).appendChild(RButton);
   }
-  
-  //Remove books from the page when the button is clicked
+
+  // Remove books from the page when the button is clicked
   RemoveBook(BookId) {
     const BookContainer = document.getElementById(BookId);
     BookContainer.parentNode.removeChild(BookContainer);
@@ -54,11 +54,11 @@ class BookList {
     localStorage.setItem('library', BookList);
   }
 
-  //Adds books to local storage 
+  // Adds books to local storage
   AddToStorage() {
     localStorage.setItem('library', JSON.stringify(this.bookListCollection));
   }
-  
+
   /* eslint-disable */
   // Displays books
   ShowBooks() {
@@ -84,3 +84,5 @@ function AddNewbook() {
   NewBookCollection.addBook(NewBook);
   NewBookCollection.AddToStorage();
 }
+
+AddNewbook();
