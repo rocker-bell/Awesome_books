@@ -59,8 +59,10 @@ class Book {
   }
 }
 
-const NewBookCollection = new BookList(JSON.parse(localStorage.getItem('library')) || []);
 
+
+const NewBookCollection = new BookList(JSON.parse(localStorage.getItem('library')) || []);
+NewBookCollection.ShowBooks();
 function AddNewbook() {
   const title = document.getElementById('Title');
   const author = document.getElementById('Author');
