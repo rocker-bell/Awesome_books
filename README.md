@@ -30,16 +30,17 @@
 - LinkedIn: [@LinkedIn](https://www.linkedin.com/in/anass-tantane/)
 - GitHub: [@github](https://github.com/rockerbell)
 
-👤 **Chai**
+👤 **Chaw**
 
-- GitHub: [@CHAW](https://github.com/chaw-bot)
-
+- GitHub: [@chaw-bot](https://github.com/chaw-bot)
+- Twitter: [@chaw36422087](https://twitter.com/chaw36422087)
+- LinkedIn[Chawanzi Ng'uni](https://www.linkedin.com/in/chawanzi-ng-uni-449328212/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/rocker-bell/Awesome_books/issues).
 
 ## Show your support
 
