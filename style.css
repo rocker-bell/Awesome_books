@@ -23,6 +23,12 @@ body {
   color: #fff;
 }
 
+.nav-items li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .logo a:hover {
   color: #b99e9e;
 }
@@ -40,12 +46,6 @@ body {
 
 .nav-items li {
   padding-left: 10px;
-}
-
-.nav-items li a {
-  text-decoration: none;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .nav-items li a:hover {
@@ -68,10 +68,30 @@ main {
   border: 5px solid #fff;
 }
 
-#welcome h1{
+.form h1 {
+  font-family: cursive, "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.contact h1 {
+  text-align: center;
+  font-family: cursive, 'Arial Narrow', Arial, sans-serif;
+  font-size: xxx-large;
+}
+
+.contact p,ul li {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#welcome h1 {
   font-family: cursive, "Arial Narrow", Arial, sans-serif;
   align-self: center;
   font-size: xxx-large;
+}
+
+.foot p {
+  color: #fff;
 }
 
 #welcome p {
@@ -124,12 +144,6 @@ main {
   width: 60%;
 }
 
-.form h1 {
-  font-family: cursive, "Arial Narrow", Arial, sans-serif;
-  text-align: center;
-  font-size: xx-large;
-}
-
 .input {
   margin-bottom: 10px;
   width: 100%;
@@ -171,17 +185,8 @@ main {
   align-items: center;
 }
 
-.contact h1 {
-  text-align: center;
-  font-family: cursive, 'Arial Narrow', Arial, sans-serif;
-  font-size: xxx-large;
-}
-
-.contact p,ul li {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.contact p, .contact ul li {
+.contact p,
+.contact ul li {
   font-size: x-large;
 }
 
@@ -192,8 +197,4 @@ main {
   padding-left: 3%;
   font-family: cursive, 'Arial Narrow', Arial, sans-serif;
   height: 10vh;
-}
-
-.foot p {
-  color: #fff;
 }
