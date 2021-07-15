@@ -68,14 +68,14 @@ main {
 }
 .btn {
   margin: 10px auto;
-  background-color: #91234d;
+  background-color: #ccc;
   width: 20%;
   height: 5vh;
   font-family: cursive, "Arial Narrow", Arial, sans-serif;
   border: none;
 }
 .btn:hover {
-  background-color: #853b57;
+  background-color: #999;
   color: aliceblue;
   cursor: pointer;
 }
