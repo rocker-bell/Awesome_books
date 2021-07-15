@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://abdona.github.io/Awesome_Books/)
+[Live Demo Link]()
 
 # Install Instruction
 1. Open your terminal and `cd` to a proper location.
