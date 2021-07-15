@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: #f9858b;
+  background-image: url(image/pexels-pixabay-261763.jpg);
+  background-repeat: no-repeat;
 }
 
 main {
@@ -42,7 +43,7 @@ main {
   padding-bottom: 10px;
 }
 .book:nth-child(even) {
-  background-color: #ed335f;
+  background-color: #d3d3d3;
 }
 .rmv-btn {
   align-self: center;
