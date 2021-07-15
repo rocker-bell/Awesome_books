@@ -202,3 +202,14 @@ main {
   font-family: cursive, 'Arial Narrow', Arial, sans-serif;
   height: 10vh;
 }
+
+#date {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  background-color:  #ccc;
+  color: black;
+  border: 1px solid #fff;
+  padding: 20px 0;
+  margin: 20px 0;
+}
