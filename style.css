@@ -44,6 +44,11 @@ body {
   padding-right: 10px;
 }
 
+.contact p,
+.contact ul li {
+  font-size: x-large;
+}
+
 .nav-items li {
   padding-left: 10px;
 }
@@ -80,7 +85,7 @@ main {
   font-size: xxx-large;
 }
 
-.contact p,ul li {
+.contact p, ul li {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -183,11 +188,6 @@ main {
   display: none;
   flex-direction: column;
   align-items: center;
-}
-
-.contact p,
-.contact ul li {
-  font-size: x-large;
 }
 
 .foot {
