@@ -71,7 +71,7 @@ class BookList {
 // Retrieves books from library
 const NewBookCollection = new BookList(JSON.parse(localStorage.getItem('library')) || []);
 NewBookCollection.ShowBooks();
-
+// eslint-disable-next-line no-unused-vars
 function AddNewbook() {
   const title = document.getElementById('Title');
   const author = document.getElementById('Author');
@@ -83,4 +83,54 @@ function AddNewbook() {
   NewBookCollection.AddToStorage();
 }
 
-AddNewbook();
+// Display list only
+// eslint-disable-next-line no-unused-vars
+function Library() {
+  document.querySelector('.heading').style.display = 'block';
+  document.querySelector('#lib').style.display = 'block';
+  document.querySelector('#list_container').style.display = 'block';
+  document.querySelector('.line').style.display = 'none';
+  document.querySelector('#AddNewbook_container').style.display = 'none';
+  document.querySelector('#contact').style.display = 'none';
+  document.querySelector('#welcome').style.display = 'none';
+}
+// Display add book form only
+// eslint-disable-next-line no-unused-vars
+function AddBookForm() {
+  document.querySelector('.heading').style.display = 'none';
+  document.querySelector('#lib').style.display = 'none';
+  document.querySelector('#list_container').style.display = 'none';
+  document.querySelector('.line').style.display = 'none';
+  document.querySelector('#AddNewbook_container').style.display = 'block';
+  document.querySelector('#contact').style.display = 'none';
+  document.querySelector('#welcome').style.display = 'none';
+}
+// Display contancts only
+// eslint-disable-next-line no-unused-vars
+function ShowContacts() {
+  document.querySelector('.heading').style.display = 'none';
+  document.querySelector('#lib').style.display = 'none';
+  document.querySelector('.line').style.display = 'none';
+  document.querySelector('#AddNewbook_container').style.display = 'none';
+  document.querySelector('#contact').style.display = 'block';
+  document.querySelector('#welcome').style.display = 'none';
+}
+// eslint-disable-next-line no-unused-vars
+function Welcome() {
+  document.querySelector('.heading').style.display = 'none';
+  document.querySelector('#lib').style.display = 'none';
+  document.querySelector('.line').style.display = 'none';
+  document.querySelector('#AddNewbook_container').style.display = 'none';
+  document.querySelector('#contact').style.display = 'none';
+  document.querySelector('#welcome').style.display = 'block';
+}
+
+function setTimeDate() {
+  /* eslint-disable */
+  const DateTime = luxon.DateTime;
+  /* eslint-enable */
+  const now = DateTime.now().toLocaleString(DateTime.DATETIME_FULL);
+  document.getElementById('date').innerHTML = now;
+}
+
+setTimeDate();

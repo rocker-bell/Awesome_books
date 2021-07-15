@@ -13,13 +13,13 @@
 
 ## Live Demo
 
-[Live Demo]( https://rocker-bell.github.io/Awesome_books/)
+[Live Demo](https://rocker-bell.github.io/Awesome_books/)
 
 # Install Instruction
 1. Open your terminal and `cd` to a proper location.
-2. Clone the Repo on you computer using `git clone git@github.com:Abdona/Awesome_Books.git`
+2. Clone the Repo on you computer using `git clone git@github.com:rocker-bell/Awesome_books.git`
 3. Make sure you have JavaScript installed; use `js -v` .
-4. Cd to the project directory`cd Awesome_Books` .
+4. Cd to the project directory`cd Awesome_books` .
 5. Open `index.html`.
 
 ## Authors

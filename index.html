@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Awesome Books</title>
-</head>
-<body>
-    
-    <main>
-        <h1 class="heading">All Awesome Books</h1>
 
-        <section class="library" id="lib">
-          <div id="list_container" class="list-container"></div>
-        </section>
-    
-        <hr class="line">
-    
-        <section class="form" id="AddNewbook_container">
-          <h1>Add a new book</h1>
-      
-          <input type="text" id="Title" class="input" placeholder="Title">
-      
-          <input type="text" id="Author" class="input" placeholder="Author">
-      
-          <button id="AddNewbook" class="btn add-btn" onclick="AddNewbook()">Add</button>
-        </section>
-    </main>
-    <script type = "text/javascript" src="script.js"></script> 
-</body> 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Awesome Books</title>
+</head>
+
+<body>
+  <nav class="nav-bar">
+    <h3 class="logo"><a href="#" onclick="Welcome();">Awesome Books</a></h3>
+
+    <ul class="nav-items">
+      <li class="item"><a href="#" onclick="Library();">List</a></li>
+      <li class="item"><a href="#" onclick="AddBookForm();">Add new</a></li>
+      <li><a href="#" onclick="ShowContacts();">Contact</a></li>
+    </ul>
+  </nav>
+  <div id = "date"></div>
+
+  <main>
+    <section id="welcome">
+      <h1>Welcome to Awesome Books</h1>
+
+      <p>
+        An app that enables you to add and remove e-books to your own local library for free.
+        <br>
+        Happy Reading!
+      </p>
+    </section>
+
+    <h1 class="heading">All Awesome Books</h1>
+
+    <section class="library" id="lib" onclick="Library()">
+      <div id="list_container" class="list-container"></div>
+    </section>
+
+    <hr class="line">
+
+    <section class="form" id="AddNewbook_container">
+      <h1>Add a new book</h1>
+
+      <input type="text" id="Title" class="input" placeholder="Title">
+
+      <input type="text" id="Author" class="input" placeholder="Author">
+
+      <button id="AddNewbook" class="btn add-btn" onclick="AddNewbook()">Add</button>
+    </section>
+
+    <section class="contact" id="contact">
+      <h1>Contact information</h1>
+
+      <p>Do you have any questions or just want to say "Hello"?
+        <br>
+        You can reach out to us on:
+      </p>
+
+      <ul class="contact-list">
+        <li>Our email: rockerchaw@microverse.com</li>
+        <li>Our phone number: +2609157681</li>
+        <li>Our address: Elm Street 22, 84503 City, Country</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Copyright...</p>
+  </footer>
+  <script src="luxon.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+
 </html>

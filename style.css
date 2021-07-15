@@ -9,13 +9,107 @@ body {
   background-repeat: no-repeat;
 }
 
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #5a5353;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.logo a {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo a:hover {
+  color: #b99e9e;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.item {
+  border-right: 2px solid #252222;
+  padding-right: 10px;
+}
+
+.nav-items li {
+  padding-left: 10px;
+}
+
+.contact p,
+.contact ul li {
+  font-size: x-large;
+}
+
+.nav-items li a:hover {
+  color: #b99e9e;
+}
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80vh;
+  justify-content: center;
+}
+
+#welcome {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  text-align: center;
+  border: 5px solid #fff;
+}
+
+.form h1 {
+  font-family: cursive, "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.contact h1 {
+  text-align: center;
+  font-family: cursive, 'Arial Narrow', Arial, sans-serif;
+  font-size: xxx-large;
+}
+
+.contact p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact ul li {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#welcome h1 {
+  font-family: cursive, "Arial Narrow", Arial, sans-serif;
+  align-self: center;
+  font-size: xxx-large;
+}
+
+.foot p {
+  color: #fff;
+}
+
+#welcome p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xx-large;
 }
 
 .heading {
+  display: none;
   text-align: center;
   font-family: cursive, "Arial Narrow", Arial, sans-serif;
   padding-top: 30px;
@@ -23,6 +117,7 @@ main {
 }
 
 .line {
+  display: none;
   margin-top: 30px;
   width: 40%;
   border-radius: 50%;
@@ -31,7 +126,7 @@ main {
 }
 
 .library {
-  display: block;
+  display: none;
   border: 2px solid #000;
   width: 100%;
 }
@@ -53,15 +148,9 @@ main {
 }
 
 .form {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 60%;
-}
-
-.form h1 {
-  font-family: cursive, "Arial Narrow", Arial, sans-serif;
-  align-self: center;
-  font-weight: 500;
 }
 
 .input {
@@ -97,4 +186,30 @@ main {
 
 .rmv-btn:hover {
   background-color: #d3d3d3;
+}
+
+.contact {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  background-color: #5a5353;
+  padding-left: 3%;
+  font-family: cursive, 'Arial Narrow', Arial, sans-serif;
+  height: 10vh;
+}
+
+#date {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  background-color: #ccc;
+  color: black;
+  border: 1px solid #fff;
+  padding: 20px 0;
+  margin: 20px 0;
 }
