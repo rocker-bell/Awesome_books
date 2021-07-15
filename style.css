@@ -44,13 +44,13 @@ body {
   padding-right: 10px;
 }
 
+.nav-items li {
+  padding-left: 10px;
+}
+
 .contact p,
 .contact ul li {
   font-size: x-large;
-}
-
-.nav-items li {
-  padding-left: 10px;
 }
 
 .nav-items li a:hover {
