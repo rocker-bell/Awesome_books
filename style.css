@@ -85,7 +85,11 @@ main {
   font-size: xxx-large;
 }
 
-.contact p, ul li {
+.contact p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact ul li {
   font-family: Arial, Helvetica, sans-serif;
 }
 
