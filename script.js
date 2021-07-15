@@ -16,19 +16,17 @@ class BookList {
   // Add book list to the top of the page
   addBook(Book) {
     this.bookListCollection.push(Book);
-    const TitleP = document.createElement('p');
-    const AuthorP = document.createElement('p');
+    const Details = document.createElement('div');
     const RButton = document.createElement('button');
     RButton.addEventListener('click', () => { this.RemoveBook(Book.id); });
     RButton.innerHTML = 'Remove';
     RButton.setAttribute('id', Book.id);
     RButton.setAttribute('class', 'rmv-btn');
     const BookContainer = document.createElement('div');
+    BookContainer.className = 'book';
     BookContainer.setAttribute('id', Book.id);
-    TitleP.innerHTML = `Title:   ${Book.title}`;
-    AuthorP.innerHTML = `Author:   ${Book.author}`;
-    document.getElementById('list_container').appendChild(BookContainer).appendChild(TitleP);
-    document.getElementById('list_container').appendChild(BookContainer).appendChild(AuthorP);
+    Details.innerHTML = `&nbsp;&nbsp;&nbsp;"${Book.title}"&nbsp;by&nbsp;&nbsp;${Book.author}`;
+    document.getElementById('list_container').appendChild(BookContainer).appendChild(Details);
     document.getElementById('list_container').appendChild(BookContainer).appendChild(RButton);
   }
 

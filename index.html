@@ -8,16 +8,26 @@
     <title>Awesome Books</title>
 </head>
 <body>
-    <h1>Awesome Books</h1>
-    <p id="BooksArray"></p> 
-    <div class="BooksContainer">
-    <div id="list_container" ></div></div>
-    <div id="AddNewbook_container">
-    <h1>Add new book</h1>
-    <input type="text" id="Title" class="input" placeholder="Title">
-    <input type="text" id="Author" class="input" placeholder="Author">
-    <button id="AddNewbook" class="btn add-btn" onclick="AddNewbook()">Add</button> </div>
+    
+    <main>
+        <h1 class="heading">All Awesome Books</h1>
+
+        <section class="library" id="lib">
+          <div id="list_container" class="list-container"></div>
+        </section>
+    
+        <hr class="line">
+    
+        <section class="form" id="AddNewbook_container">
+          <h1>Add a new book</h1>
+      
+          <input type="text" id="Title" class="input" placeholder="Title">
+      
+          <input type="text" id="Author" class="input" placeholder="Author">
+      
+          <button id="AddNewbook" class="btn add-btn" onclick="AddNewbook()">Add</button>
+        </section>
+    </main>
     <script type = "text/javascript" src="script.js"></script> 
-   
 </body> 
 </html>

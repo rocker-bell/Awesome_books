@@ -1,3 +1,100 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #fff;
+  background-image: url(image/pexels-pixabay-261763.jpg);
+  background-repeat: no-repeat;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  text-align: center;
+  font-family: cursive, "Arial Narrow", Arial, sans-serif;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.line {
+  margin-top: 30px;
+  width: 40%;
+  border-radius: 50%;
+  border: 1px solid #252222;
+  background-color: #252222;
+}
+
+.library {
+  display: block;
+  border: 2px solid #000;
+  width: 100%;
+}
+
+.list-container {
+  width: 100%;
+}
+
+.book {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.book:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.form h1 {
+  font-family: cursive, "Arial Narrow", Arial, sans-serif;
+  align-self: center;
+  font-weight: 500;
+}
+
+.input {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 5vh;
+  padding-left: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.btn {
+  margin: 10px auto;
+  background-color: #ccc;
+  width: 20%;
+  height: 5vh;
+  font-family: cursive, "Arial Narrow", Arial, sans-serif;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #999;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.rmv-btn {
+  height: 5vh;
+  font-family: cursive, "Arial Narrow", Arial, sans-serif;
+  border: none;
+  align-self: center;
+  margin-right: 2%;
+}
+
+.rmv-btn:hover {
+  background-color: #d3d3d3;
 }
