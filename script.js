@@ -83,4 +83,40 @@ function AddNewbook() {
   NewBookCollection.AddToStorage();
 }
 
-AddNewbook();
+// Display list only
+function Library() {
+  document.querySelector('.heading').style.display = 'block';
+  document.querySelector('#lib').style.display = 'block';
+  document.querySelector('#list_container').style.display = 'block';
+  document.querySelector('.line').style.display = 'none';
+  document.querySelector('#AddNewbook_container').style.display = 'none';
+  document.querySelector('#contact').style.display = 'none';
+  document.querySelector('#welcome').style.display = 'none';
+}
+// Display add book form only
+function AddBookForm() {
+  document.querySelector('.heading').style.display = 'none';
+  document.querySelector('#lib').style.display = 'none';
+  document.querySelector('#list_container').style.display = 'none';
+  document.querySelector('.line').style.display = 'none';
+  document.querySelector('#AddNewbook_container').style.display = 'block';
+  document.querySelector('#contact').style.display = 'none';
+  document.querySelector('#welcome').style.display = 'none';
+}
+// Display contancts only
+function ShowContacts() {
+  document.querySelector('.heading').style.display = 'none';
+  document.querySelector('#lib').style.display = 'none';
+  document.querySelector('.line').style.display = 'none';
+  document.querySelector('#AddNewbook_container').style.display = 'none';
+  document.querySelector('#contact').style.display = 'block';
+  document.querySelector('#welcome').style.display = 'none';
+}
+function Welcome() {
+  document.querySelector('.heading').style.display = 'none';
+  document.querySelector('#lib').style.display = 'none';
+  document.querySelector('.line').style.display = 'none';
+  document.querySelector('#AddNewbook_container').style.display = 'none';
+  document.querySelector('#contact').style.display = 'none';
+  document.querySelector('#welcome').style.display = 'block';
+}
