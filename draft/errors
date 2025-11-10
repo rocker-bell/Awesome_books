@@ -1,0 +1,136 @@
+Excellent catch — that error:
+
+> ❌ **“book id is never assigned to type ‘never’”**
+
+is a **TypeScript type inference issue**, not a React logic problem.
+
+Let’s walk through **why it happens** and how to fix it properly 👇
+
+---
+
+## 🧠 Why It Happens
+
+If your project uses **TypeScript** (`.tsx` file), this line:
+
+```tsx
+const [books, setBooks] = useState([]);
+```
+
+initializes an **empty array**, and TypeScript doesn’t know what type it should contain.
+So it infers it as `never[]`, meaning:
+
+> “An array that will never have any valid element type.”
+
+Then later when you do:
+
+```tsx
+const newBook = { id: Date.now(), title, author };
+setBooks([...books, newBook]);
+```
+
+TypeScript complains:
+
+> ❌ You’re trying to push `{ id, title, author }` into an array of type `never[]`.
+
+---
+
+## ✅ Fix #1 — Define a Book Type (Recommended)
+
+Add an interface and tell React what type the array holds:
+
+```tsx
+interface Book {
+  id: number;
+  title: string;
+  author: string;
+}
+
+const [books, setBooks] = useState<Book[]>([]);
+```
+
+✅ This way, `books` is an array of objects with `id`, `title`, and `author`.
+
+---
+
+## ✅ Fix #2 — Inline Type Annotation (Quick Fix)
+
+If you don’t want to define an interface, you can write:
+
+```tsx
+const [books, setBooks] = useState<{ id: number; title: string; author: string }[]>([]);
+```
+
+Same effect, just inline.
+
+---
+
+## ✅ Fix #3 — Use `useState<any[]>([])` (Not Recommended)
+
+You can silence the error with:
+
+```tsx
+const [books, setBooks] = useState<any[]>([]);
+```
+
+…but this **disables type safety**, so it’s only okay for fast debugging.
+
+---
+
+## 🧩 Example (Fixed Code Snippet)
+
+Here’s your corrected version:
+
+```tsx
+import React, { useState, useEffect } from "react";
+import "../Styles/Structure.css";
+import { DateTime } from "luxon";
+
+interface Book {
+  id: number;
+  title: string;
+  author: string;
+}
+
+export default function AwesomeBooks() {
+  const [view, setView] = useState("welcome");
+  const [books, setBooks] = useState<Book[]>([]);
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [date, setDate] = useState("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = DateTime.now().toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+      setDate(now);
+    };
+    updateTime();
+    const timer = setInterval(updateTime, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const addNewBook = () => {
+    if (!title.trim() || !author.trim()) return;
+    const newBook: Book = { id: Date.now(), title, author };
+    setBooks([...books, newBook]);
+    setTitle("");
+    setAuthor("");
+  };
+
+  const removeBook = (id: number) => {
+    setBooks(books.filter((book) => book.id !== id));
+  };
+
+  return (
+    // ...rest of your JSX unchanged
+  );
+}
+```
+
+---
+
+✅ **Result:** TypeScript now knows exactly what’s in `books`,
+and `id` is recognized as a valid `number` — no more “type never” error.
+
+---
+
+Would you like me to make this version also include **localStorage persistence** (so added books stay after a page reload)?

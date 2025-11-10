@@ -1,10 +1,10 @@
 import {Routes, Route} from "react-router-dom";
-import Structure from "./Components/Strructure";
+import AwesomeBooks from "./Components/Structure.jsx";
 const App = () => {
   return (
 
     <Routes>
-      <Route path="/" element={<Structure/>} />
+      <Route path="/" element={<AwesomeBooks/>} />
     </Routes>
 
   )
