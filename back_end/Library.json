@@ -1,8 +1,42 @@
 [
   {
-    "id": "0e10f6e2-2d67-4084-ab5a-61c83428fe37",
-    "title": "qweq",
+    "id": "2e256258-1556-432a-a986-b79727dea736",
+    "title": "qweqwqwe",
+    "author": "qwewqqwe",
+    "description": null,
+    "publish_date": null,
+    "publish_country": null,
+    "price": null,
+    "createdAt": "2025-11-12T14:38:59.151Z"
+  },
+  {
+    "id": "cc58c41b-ca9e-4d56-8601-359ec3f316d9",
+    "title": "qeqwe",
     "author": "qweqwe",
-    "price": null
+    "description": null,
+    "publish_date": null,
+    "publish_country": null,
+    "price": null,
+    "createdAt": "2025-11-12T14:38:59.151Z"
+  },
+  {
+    "id": "347f43d4-eaad-4d90-83a4-4da94ffc1c51",
+    "title": "wqeqw",
+    "author": "qweqweqwe",
+    "description": "qweqwe",
+    "publish_date": "2000-02-10",
+    "publish_country": "eqweqwe",
+    "price": "455",
+    "createdAt": "2025-11-12T14:38:59.151Z"
+  },
+  {
+    "id": "f5a8d755-2b1d-4ffb-915b-b39eb1cc20f6",
+    "title": "www",
+    "author": "wwww",
+    "description": "wqwe",
+    "publish_date": "2000-02-10",
+    "publish_country": "asdasd",
+    "price": "4556",
+    "createdAt": "2025-11-12T14:38:59.151Z"
   }
 ]
